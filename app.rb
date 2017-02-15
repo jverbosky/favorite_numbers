@@ -1,3 +1,5 @@
+# Using sessions to hold onto data without having to pass it back into the front end
+
 require 'sinatra'
 require 'sinatra/reloader' if development?  # automatically reload app.rb on save via sinatra-contrib gem
 
