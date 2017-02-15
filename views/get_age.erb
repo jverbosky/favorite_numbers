@@ -1,0 +1,8 @@
+<%= name %>, what is your age?
+
+<form action = "post_age" method = "post">
+	<input type = "text" name = "user_age">
+	<!-- trick to getting the name using hidden field on input -->
+	<input type = "text" name = "user_name" value = <%= name %> hidden>
+	<input type = "submit">
+</form>

@@ -1,0 +1,11 @@
+OK, <%= name %>, I see you are <%= age %> years old. What are your favorite numbers?
+
+<form action = "post_numbers" method = "post">
+	<input type = "text" name = "num_1">
+	<input type = "text" name = "num_2">
+	<input type = "text" name = "num_3">
+	<!-- trick to getting the name using hidden field on input -->
+	<input type = "text" name = "user_name" value = <%= name %> hidden>
+	<input type = "text" name = "user_age" value = <%= age %> hidden>
+	<input type = "submit">
+</form>
