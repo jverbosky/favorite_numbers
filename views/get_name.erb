@@ -1,6 +1,13 @@
 What is your name?
 
 <form action = "post_name" method = "post">
-	<input type = "text" name = "user_name">
-	<input type = "submit">
+  <!-- <input type = "text" name = "user_name"> -->
+  <input type = "text" name = "user[][user_name]">  <!-- user = [{"user_name"=>"John"}] -->
+  <!-- when adding another field to capture age: -->
+  <!-- <input type = "text" name = "user[][user_age]"> -->
+  <!-- output is: -->
+  <!-- user = [{"user_name"=>"John", "user_age"=>"41"}] -->
+  <input type = "submit">
 </form>
+
+<!-- need to figure out how to grab info out of hash in route -->

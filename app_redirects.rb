@@ -15,11 +15,12 @@ get '/age' do
   erb :get_age, :locals => {:name => backend_name}  # name is passed to /get_location
 end
 
-post '/post_age' do
-  backend_name = params[:user_name]
-  backend_age = params[:user_age]
-  redirect "/numbers?name=" + backend_name + "&age=" + backend_age
-  # redirect "/numbers?age=" + backend_age
+post '/post_name' do
+  backend_name = params[:user]  # user = [{"user_name"=>"John"}]
+  #"#{params[:user]}"  # [{"user_name"=>"John"}]
+  "#{backend_name[0]["user_name"]}" # John
+  # redirect "/age?name=" + backend_name
+  # "Your name is #{user["user_name"]}."
 end
 
 get 'numbers' do
