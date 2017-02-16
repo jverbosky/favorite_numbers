@@ -6,16 +6,6 @@ get "/" do
 end
 
 post '/post_name' do
-  backend_name = params[:user_name]
-  redirect "/age?name=" + backend_name
-end
-
-get '/age' do
-  backend_name = params[:name]
-  erb :get_age, :locals => {:name => backend_name}  # name is passed to /get_location
-end
-
-post '/post_name' do
   backend_name = params[:user]  # user = [{"user_name"=>"John"}]
   #"#{params[:user]}"  # [{"user_name"=>"John"}]
   "#{backend_name[0]["user_name"]}" # John
@@ -23,20 +13,30 @@ post '/post_name' do
   # "Your name is #{user["user_name"]}."
 end
 
-get 'numbers' do
-  backend_age = params[:user_age]
-  erb :get_numbers, :locals => {:name => backend_name, :age => backend_age}
-end
+# get '/age' do
+#   backend_name = params[:name]
+#   erb :get_age, :locals => {:name => backend_name}  # name is passed to /get_location
+# end
 
-post '/post_numbers' do
-  backend_name = params[:user_name]
-  backend_age = params[:user_age]
-  one = params[:num_1]
-  two = params[:num_2]
-  three = params[:num_3]
-  sum = one.to_i + two.to_i + three.to_i
-  compare = (sum < backend_age.to_i) ? "less" : "greater"
-  "#{backend_name}, your age is #{backend_age}.<br>
-   Your favorite numbers are #{one}, #{two} and #{three}.<br>
-   The sum of your favorite numbers is #{sum}, which is #{compare} than your age."
-end
+# post '/post_age' do
+#   backend_name = params[:user_name]
+#   redirect "/numbers?age=" + backend_age
+# end
+
+# get 'numbers' do
+#   backend_age = params[:user_age]
+#   erb :get_numbers, :locals => {:name => backend_name, :age => backend_age}
+# end
+
+# post '/post_numbers' do
+#   backend_name = params[:user_name]
+#   backend_age = params[:user_age]
+#   one = params[:num_1]
+#   two = params[:num_2]
+#   three = params[:num_3]
+#   sum = one.to_i + two.to_i + three.to_i
+#   compare = (sum < backend_age.to_i) ? "less" : "greater"
+#   "#{backend_name}, your age is #{backend_age}.<br>
+#    Your favorite numbers are #{one}, #{two} and #{three}.<br>
+#    The sum of your favorite numbers is #{sum}, which is #{compare} than your age."
+# end
