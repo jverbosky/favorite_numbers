@@ -18,7 +18,8 @@ end
 post '/post_age' do
   backend_name = params[:user_name]
   backend_age = params[:user_age]
-  redirect "/numbers?age=" + backend_age
+  redirect "/numbers?name=" + backend_name + "&age=" + backend_age
+  # redirect "/numbers?age=" + backend_age
 end
 
 get 'numbers' do
