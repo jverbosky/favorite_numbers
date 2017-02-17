@@ -24,10 +24,10 @@ end
 
 get '/numbers' do
   user_hash = eval(params[:user])  # use eval to convert string to hash
-  backend_name = user_hash["user_name"]
-  backend_age = user_hash["user_age"]
-  "#{backend_name}, #{backend_age}"
-  # erb :get_numbers, :locals => {:name => backend_name, :age => backend_age}
+  backend_name = user_hash["user_name"]  # get user_name from hash
+  backend_age = user_hash["user_age"]  # get user_age from hash
+  # "#{backend_name}, #{backend_age}"  # John, 41
+  erb :get_numbers, :locals => {:name => backend_name, :age => backend_age}
 end
 
 post '/post_numbers' do

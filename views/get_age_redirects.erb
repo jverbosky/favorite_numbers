@@ -1,6 +1,7 @@
 <%= name %>, what is your age?
 
 <form action = "post_age" method = "post">
+  <!-- trick to getting both the age and name in the redirect = use a hash -->
   <input type = "text" name = "user[user_age]">
   <!-- trick to getting the name using hidden field on input -->
   <input type = "text" name = "user[user_name]" value = <%= name %> hidden>
