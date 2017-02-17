@@ -7,13 +7,13 @@ end
 
 post '/post_name' do
   backend_name = params[:user_name]
-  erb :get_age, :locals => {:name => backend_name}  # name is passed to /get_location
+  erb :get_age, locals: {name: backend_name}  # name is passed to /get_location
 end
 
 post '/post_age' do
   backend_age = params[:user_age]
   backend_name = params[:user_name]
-  erb :get_numbers, :locals => {:name => backend_name, :age => backend_age}
+  erb :get_numbers, locals: {name: backend_name, age: backend_age}
 end
 
 post '/post_numbers' do
