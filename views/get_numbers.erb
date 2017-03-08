@@ -4,8 +4,17 @@ OK, <%= name %>, I see you are <%= age %> years old. What are your favorite numb
 	<input type = "text" name = "num_1">
 	<input type = "text" name = "num_2">
 	<input type = "text" name = "num_3">
+
+<!-- When commenting out HTML w/embedded Ruby, don't comment out Ruby variable with #  -->
+<!-- - will result in: syntax error, unexpected keyword_ensure, expecting ')' -->
+<!-- <input type = "text" name = "user_name" value = <%= name %> hidden> -->
+
+<!-- When using hidden form fields to pass data, set input type to "hidden" -->
+<!-- or else submitting an empty field will result in visible field on page -->
+<!-- with "hidden" in it -->
+
 	<!-- trick to getting the name using hidden field on input -->
-	<input type = "text" name = "user_name" value = <%= name %> hidden>
-	<input type = "text" name = "user_age" value = <%= age %> hidden>
+	<input type = "hidden" name = "user_name" value = <%= name %>>
+	<input type = "hidden" name = "user_age" value = <%= age %>>
 	<input type = "submit">
 </form>
